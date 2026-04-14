@@ -19,7 +19,7 @@ const Footer = () => {
         <div className="space-y-6">
           <div className="bg-white p-2 inline-block rounded-md">
             <img
-              src="/public/logo.png"
+              src="/logo.png"
               alt="RB Hires Logo"
               className="h-12 w-auto object-contain"
             />

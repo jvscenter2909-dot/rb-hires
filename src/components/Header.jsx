@@ -26,7 +26,7 @@ const Header = () => {
 
         {/* LOGO */}
       <img
-  src="../public/logo.png"
+  src="../logo.png"
   alt="RB Hires Consulting"
   className="h-10 md:h-12 w-auto object-contain"
 />
