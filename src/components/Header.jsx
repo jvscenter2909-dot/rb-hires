@@ -21,15 +21,16 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md shadow-md z-50 border-b">
-      
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
-
-        {/* LOGO */}
-      <img
-  src="../logo.png"
-  alt="RB Hires Consulting"
-  className="h-10 md:h-12 w-auto object-contain"
-/>
+        
+        {/* LOGO - Link ઉમેર્યું છે જેથી હોમ પેજ પર જઈ શકાય */}
+        <Link to="/" className="flex items-center">
+          <img
+            src="../logo.png"
+            alt="RB Hires Consulting"
+            className="h-10 md:h-12 w-auto object-contain cursor-pointer"
+          />
+        </Link>
 
         {/* DESKTOP NAV */}
         <nav className="hidden md:flex items-center gap-8 font-medium text-gray-700">
@@ -81,7 +82,6 @@ const Header = () => {
         }`}
       >
         <div className="flex flex-col gap-3 px-4">
-
           {navItems.map((item, index) => (
             <Link
               key={index}
