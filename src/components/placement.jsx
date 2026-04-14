@@ -40,9 +40,9 @@ const PlacementSection = () => {
             <span className="text-amber-500 uppercase tracking-[0.3em] text-[10px] font-bold">Trusted Ecosystem</span>
           </div>
           <h2 className="text-4xl md:text-6xl font-bold font-display tracking-tight">
-            Our Graduates <span className="text-zinc-600">Work At</span>
+            Our Graduates <span className="text-zinc-300">Work At</span>
           </h2>
-          <p className="mt-6 text-zinc-500 max-w-2xl mx-auto text-lg font-light leading-relaxed">
+          <p className="mt-6 text-zinc-300 max-w-2xl mx-auto text-lg font-light leading-relaxed">
             Connecting our elite talent with the world's most innovative organizations.
           </p>
         </div>

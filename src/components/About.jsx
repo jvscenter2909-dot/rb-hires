@@ -1,6 +1,9 @@
 import React from "react";
+import { FaLinkedinIn } from "react-icons/fa";
+import { FiMail } from "react-icons/fi";
+import Footer from "../components/Footer";
 
-const About = () => {
+const About = ({ showExtra = false }) => {
   return (
     <section className="relative bg-black text-white py-24 px-6 md:px-20 overflow-hidden selection:bg-amber-500 selection:text-black">
       
@@ -43,15 +46,15 @@ const About = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-[1.1] font-display">
             Trusted <span className="text-amber-500">Recruitment</span> & <br /> 
             Career Consulting Partner
-          </h2>
+          </h2> 
 
           <div className="space-y-6">
-            <p className="text-xl text-gray-300 font-light leading-relaxed">
+            <p className="text-xl text-white/80 font-light leading-relaxed">
               RB Hires Consulting is a professional recruitment firm 
               dedicated to connecting <span className="text-white font-medium underline decoration-amber-500/40">skilled talent</span> with world-class opportunities.
             </p>
 
-            <p className="text-gray-400 leading-relaxed border-l-2 border-amber-500/30 pl-6 italic">
+            <p className="text-white/80 leading-relaxed border-l-2 border-amber-500/30 pl-6 italic">
               "Our approach focuses on understanding people, roles, and company culture — 
               ensuring long-term success for both employers and job seekers."
             </p>
@@ -62,7 +65,7 @@ const About = () => {
             {['Expert Vetting', 'Industry Insight', 'Global Reach', 'Culture Match'].map((item) => (
               <div key={item} className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-amber-500" />
-                <span className="text-sm text-gray-300 font-medium">{item}</span>
+                <span className="text-sm text-white/80 font-medium">{item}</span>
               </div>
             ))}
           </div>
@@ -87,178 +90,222 @@ const About = () => {
         }
         .font-display { font-family: 'Space Grotesk', sans-serif; }
       `}</style>
+     {showExtra && (
+  <div className="max-w-7xl mx-auto mt-20 md:mt-24">
+
+    {/* 🔶 Section Heading */}
+    <div className="text-center mb-14">
+      <p className="text-amber-500 uppercase tracking-[0.3em] text-xs font-semibold mb-3">
+        OUR PURPOSE
+      </p>
+
+      <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display">
+        Mission & <span className="text-amber-500">Vision</span>
+      </h2>
+
+      <p className="text-white/60 max-w-2xl mx-auto text-sm md:text-base">
+        Guiding principles that define our values, goals, and commitment to excellence.
+      </p>
+    </div>
+
+    {/* 🔶 Mission Vision Grid */}
+    <div className="grid md:grid-cols-2 gap-10 mb-20">
+
+      {/* Mission */}
+      <div className="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md hover:border-amber-500/40 transition duration-300">
+        <h3 className="text-2xl font-bold mb-4 text-amber-500">
+          Our Mission
+        </h3>
+        <p className="text-white/70 leading-relaxed">
+          Our mission is to connect talented professionals with the right
+          opportunities by delivering efficient, transparent, and
+          personalized recruitment solutions that create long-term value.
+        </p>
+      </div>
+
+      {/* Vision */}
+      <div className="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md hover:border-amber-500/40 transition duration-300">
+        <h3 className="text-2xl font-bold mb-4 text-amber-500">
+          Our Vision
+        </h3>
+        <p className="text-white/70 leading-relaxed">
+          Our vision is to become a globally trusted recruitment partner,
+          helping businesses grow and individuals build meaningful careers
+          through strong and lasting connections.
+        </p>
+      </div>
+
+    </div>
+
+    {/* 🔶 TEAM SECTION */}
+    <div className="text-center mb-16">
+      <p className="text-amber-500 uppercase tracking-[0.3em] text-xs font-semibold mb-3">
+        OUR TEAM
+      </p>
+
+      <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display">
+        Meet Our <span className="text-amber-500">Experts</span>
+      </h2>
+
+      <p className="text-white/60 max-w-2xl mx-auto text-sm md:text-base">
+        A team of dedicated professionals committed to delivering excellence.
+      </p>
+    </div>
+
+    {/* Team Grid */}
+   <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+
+  {[
+    {
+      name: "Bhargav Solanki",
+      role: "Founder",
+      img: "/bhargav.png",
+    },
+    {
+      name: "Jimit Parmar",
+      role: "Co-Founder",
+      img: "/jimit.png",
+    },
+    {
+      name: "Rahul Parmar",
+      role: "CEO",
+      img: "/rahul.png",
+    },
+    {
+      name: "Parth Solanki",
+      role: "HR Manager",
+      img: "/parth.png",
+    },
+  ].map((member, index) => (
+    <div
+      key={index}
+      className="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-amber-500/40 transition duration-300"
+    >
+      {/* Image */}
+      <div className="overflow-hidden">
+       <img
+  src={member.img}
+  alt={member.name}
+  className="w-full h-70 object-cover group-hover:scale-105 transition duration-500"
+/>
+      </div>
+
+      {/* Content */}
+      <div className="p-4 text-center">
+        <h3 className="text-base font-semibold">{member.name}</h3>
+        <p className="text-amber-500 text-xs mt-1">{member.role}</p>
+        <div className="flex justify-center gap-3 mt-3">
+    
+    {/* LinkedIn */}
+    <a
+      href="#"
+      className="w-8 h-8 flex items-center justify-center rounded-full border border-amber-500/40 text-amber-500 hover:bg-amber-500 hover:text-black transition duration-300"
+    >
+      <FaLinkedinIn size={14} />
+    </a>
+
+    {/* Mail */}
+    <a
+      href="#"
+      className="w-8 h-8 flex items-center justify-center rounded-full border border-amber-500/40 text-amber-500 hover:bg-amber-500 hover:text-black transition duration-300"
+    >
+      <FiMail size={14} />
+    </a>
+
+  </div>
+      </div>
+    </div>
+
+    
+  ))}
+
+</div>
+{/* 🔶 TESTIMONIALS */}
+<div className="max-w-7xl mx-auto mt-24 md:mt-32 px-6">
+  {/* Heading */}
+  <div className="text-center mb-20">
+    <p className="text-amber-500 uppercase tracking-[0.4em] text-[10px] font-bold mb-4 bg-amber-500/10 inline-block px-4 py-1 rounded-full border border-amber-500/20">
+      Testimonials
+    </p>
+
+    <h2 className="text-4xl md:text-5xl font-bold mb-6 font-display text-white">
+      What Our <span className="text-amber-500">Clients</span> Say
+    </h2>
+
+    <div className="w-20 h-1 bg-amber-500 mx-auto mb-6 rounded-full opacity-50"></div>
+
+    <p className="text-white/50 max-w-2xl mx-auto text-sm md:text-lg leading-relaxed font-light">
+      Hear from organizations who trust us to deliver exceptional talent and drive their business forward.
+    </p>
+  </div>
+
+  {/* Cards */}
+  <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+    {[
+      {
+        text: "The recruitment process was smooth and transparent. We received quality candidates perfectly aligned with our expectations.",
+        name: "Anita Verma",
+        role: "HR Director",
+      },
+      {
+        text: "Highly reliable recruitment partner. Their structured approach and dedication make them stand out in the industry.",
+        name: "Amit Patel",
+        role: "Tech Lead",
+      },
+      {
+        text: "Exceptional service and quick turnaround time. Truly a professional hiring consultancy for modern business.",
+        name: "Sneha Kulkarni",
+        role: "Operations Head",
+      },
+    ].map((item, index) => (
+      <div
+        key={index}
+        className="group relative bg-gradient-to-br from-white/[0.08] to-transparent border border-white/10 rounded-3xl p-8 transition-all duration-500 hover:border-amber-500/50 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(245,158,11,0.15)]"
+      >
+        {/* Floating Quote Icon */}
+        <div className="absolute -top-4 -left-2 bg-amber-500 text-black w-10 h-10 flex items-center justify-center rounded-xl rotate-[-10deg] shadow-lg group-hover:rotate-0 transition-transform duration-300">
+          <span className="text-2xl font-serif">“</span>
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10">
+          <p className="text-white/80 text-base md:text-lg leading-relaxed mb-10 italic font-light">
+            {item.text}
+          </p>
+
+          {/* Bottom Profile Section */}
+          <div className="flex items-center gap-4 border-t border-white/5 pt-6">
+            {/* Avatar Placeholder */}
+            <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-amber-500 to-orange-400 flex items-center justify-center text-black font-bold text-sm shadow-inner">
+              {item.name.charAt(0)}
+            </div>
+
+            <div className="flex flex-col">
+              <span className="text-white font-semibold text-base group-hover:text-amber-500 transition-colors">
+                {item.name}
+              </span>
+              <span className="text-white-400/70 text-[11px] uppercase tracking-widest font-medium">
+                {item.role}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Decorative Background Glow */}
+        <div className="absolute inset-0 bg-amber-500/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl blur-2xl"></div>
+      </div>
+    ))}
+  </div>
+</div>
+<Footer />
+  </div>
+
+)}
+
+
     </section>
+    
   );
 };
 
 export default About;
-
-// import React from "react";
-
-// const About = () => {
-//   return (
-//     <section className="relative bg-[#0f0f0f] text-white py-24 px-6 md:px-20 overflow-hidden">
-      
-//       {/* 🌑 Subtle Background Textures */}
-//       <div className="absolute inset-0 opacity-10 pointer-events-none">
-//         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-600/20 rounded-full blur-[120px]" />
-//         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-stone-500/10 rounded-full blur-[100px]" />
-//       </div>
-
-//       <div className="relative max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
-
-//         {/* Left Side: Modern Image Layout */}
-//         <div className="w-full md:w-1/2 relative">
-//           {/* Decorative Back-frame */}
-//           <div className="absolute -top-4 -left-4 w-full h-full border border-orange-500/30 rounded-2xl hidden md:block" />
-          
-//           <div className="relative rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform hover:scale-[1.02] transition-transform duration-500">
-//             <img
-//               src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
-//               alt="About RB Hires"
-//               className="w-full h-[450px] object-cover"
-//             />
-//             {/* Overlay Gradient */}
-//             <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] via-transparent to-transparent opacity-60" />
-//           </div>
-
-//           {/* Experience Card */}
-//           <div className="absolute -bottom-8 -left-8 bg-orange-500 p-8 rounded-2xl shadow-2xl hidden lg:block">
-//             <h3 className="text-black font-black text-4xl leading-none">RB</h3>
-//             <p className="text-black text-xs font-bold uppercase tracking-widest mt-1">Consulting</p>
-//           </div>
-//         </div>
-
-//         {/* Right Side Content */}
-//         <div className="w-full md:w-1/2 space-y-8">
-          
-//           <div className="space-y-4">
-//             <div className="flex items-center gap-4">
-//               <div className="h-[2px] w-12 bg-orange-500" />
-//               <span className="text-orange-500 uppercase tracking-[0.3em] text-xs font-bold">
-//                 Professional Expertise
-//               </span>
-//             </div>
-            
-//             <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-//               Crafting Excellence in <br />
-//               <span className="text-orange-500">Talent Acquisition</span>
-//             </h2>
-//           </div>
-
-//           <div className="space-y-6">
-//             <p className="text-stone-300 text-lg leading-relaxed">
-//               RB Hires Consulting is a professional recruitment and consultancy firm
-//               dedicated to connecting skilled talent with the right opportunities.
-//             </p>
-
-//             <div className="p-6 bg-stone-900/50 border-l-4 border-orange-500 rounded-r-xl">
-//               <p className="text-stone-400 italic leading-relaxed">
-//                 "Our approach focuses on understanding people, roles, and company culture —
-//                 ensuring long-term success for both employers and job seekers."
-//               </p>
-//             </div>
-//           </div>
-
-//           <div className="flex flex-wrap gap-6 pt-4">
-//             <button className="px-10 py-4 bg-orange-500 text-black font-bold rounded-xl hover:bg-orange-400 hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-orange-500/20">
-//               Our Services
-//             </button>
-//             <button className="px-10 py-4 border border-stone-700 text-white font-bold rounded-xl hover:bg-white hover:text-black transition-all duration-300">
-//               Get in Touch
-//             </button>
-//           </div>
-//         </div>
-
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default About;
-
-// import React from "react";
-
-// const About = () => {
-//   return (
-//     <section className="relative bg-[#FCFBFA] text-[#1a1a1a] py-24 px-6 md:px-20 overflow-hidden font-sans">
-      
-//       {/* ✨ Subtle Gold Accents in Background */}
-//       <div className="absolute inset-0 pointer-events-none opacity-40">
-//         <div className="absolute top-[-10%] left-[-5%] w-[600px] h-[600px] bg-[#D4AF37]/5 rounded-full blur-[120px]" />
-//         <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#C5A028]/10 rounded-full blur-[100px]" />
-//       </div>
-
-//       <div className="relative max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
-
-//         {/* Left Side: Elegant Image Frame */}
-//         <div className="w-full md:w-1/2 relative group">
-//           {/* Gold Outline Frame */}
-//           <div className="absolute -top-5 -left-5 w-40 h-40 border-t-2 border-l-2 border-[#C5A028] hidden md:block" />
-//           <div className="absolute -bottom-5 -right-5 w-40 h-40 border-b-2 border-r-2 border-[#C5A028] hidden md:block" />
-          
-//           <div className="relative rounded-sm overflow-hidden shadow-[20px_20px_60px_rgba(0,0,0,0.05)] border border-stone-100">
-//             <img
-//               src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
-//               alt="About RB Hires"
-//               className="w-full h-[500px] object-cover hover:scale-105 transition-transform duration-1000"
-//             />
-//             {/* Soft Light Overlay */}
-//             <div className="absolute inset-0 bg-gradient-to-tr from-white/20 via-transparent to-transparent" />
-//           </div>
-
-//           {/* Floating Year Badge */}
-//           <div className="absolute bottom-10 -left-10 bg-white border border-stone-100 p-8 shadow-2xl hidden lg:block">
-//             <h3 className="text-[#C5A028] font-serif text-5xl leading-none italic">RB</h3>
-//             <p className="text-stone-400 text-[10px] uppercase tracking-[0.3em] mt-2 font-bold">Consultancy</p>
-//           </div>
-//         </div>
-
-//         {/* Right Side Content */}
-//         <div className="w-full md:w-1/2 space-y-10">
-          
-//           <div className="space-y-4">
-//             <div className="flex items-center gap-3">
-//               <span className="h-[1px] w-10 bg-[#C5A028]" />
-//               <span className="text-[#C5A028] uppercase tracking-[0.4em] text-[11px] font-bold">
-//                 Established Excellence
-//               </span>
-//             </div>
-            
-//             <h2 className="text-4xl md:text-6xl font-serif text-[#1a1a1a] leading-tight">
-//               A Legacy of <br />
-//               <span className="text-[#C5A028] italic">Strategic Hiring</span>
-//             </h2>
-//           </div>
-
-//           <div className="space-y-6">
-//             <p className="text-stone-600 text-lg leading-relaxed font-light">
-//               RB Hires Consulting is a professional recruitment and consultancy firm
-//               dedicated to connecting skilled talent with the right opportunities.
-//             </p>
-
-//             <div className="relative p-8 bg-white border border-stone-100 rounded-sm shadow-sm">
-//               <span className="absolute top-4 left-4 text-4xl text-[#C5A028]/20 font-serif">“</span>
-//               <p className="text-stone-500 italic leading-relaxed relative z-10 pl-4">
-//                 Our approach focuses on understanding people, roles, and company culture —
-//                 ensuring long-term success for both employers and job seekers.
-//               </p>
-//             </div>
-//           </div>
-
-//           <div className="flex flex-wrap gap-8 pt-4 items-center">
-//             <button className="px-12 py-4 bg-[#1a1a1a] text-white text-sm uppercase tracking-widest font-bold hover:bg-[#C5A028] transition-all duration-500 shadow-xl shadow-stone-200">
-//               Discover More
-//             </button>
-//             <button className="text-[#1a1a1a] text-sm uppercase tracking-widest font-bold border-b border-[#C5A028] pb-1 hover:text-[#C5A028] transition-colors">
-//               Our Vision
-//             </button>
-//           </div>
-//         </div>
-
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default About;

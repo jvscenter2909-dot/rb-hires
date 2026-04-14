@@ -9,6 +9,7 @@ import Refer from "./pages/Refern";
 import Contact from "./pages/Contact";
 import Job from "./pages/ApplyJob";
 import PreLoader from "./components/PreLoader"; 
+import Gallery from "./pages/Gallery"
 
 
 const App = () => {
@@ -33,9 +34,10 @@ const App = () => {
         {/* Layout Wrapper */}
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<About showExtra={true}  />} />
           <Route path="/service" element={<Service />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/gallery" element={<Gallery/>}/>
           <Route path="/refer" element={<Refer />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/job" element={<Job />} />

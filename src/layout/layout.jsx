@@ -1,8 +1,14 @@
 import React from "react";
 import Header from "../components/Header";
-import { Outlet } from "react-router-dom";
+import Footer from "../components/Footer";
+import { Outlet, useLocation } from "react-router-dom";
 
 const Layout = () => {
+  const location = useLocation();
+
+  // only service page par footer show karavo
+  const showFooter = location.pathname === "/service";
+
   return (
     <div>
       <Header />
@@ -11,6 +17,9 @@ const Layout = () => {
       <main className="pt-16">
         <Outlet />
       </main>
+
+      {/* Footer only for service page */}
+      {showFooter && <Footer />}
     </div>
   );
 };

@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <div>
       <Hero />
-      <About />
+      <About showExtra={false} />
       <Service />
       <Diverse />
       <Achivement />

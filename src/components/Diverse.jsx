@@ -156,10 +156,10 @@ const IndustriesWeServe = () => {
             
             <h2 className="text-4xl md:text-6xl font-bold font-display leading-[1.1]">
               Industries <br /> 
-              <span className="text-zinc-600">We Serve.</span>
+              <span className="text-white">We Serve.</span>
             </h2>
             
-            <p className="text-zinc-400 text-lg font-light leading-relaxed">
+            <p className="text-white text-lg font-light leading-relaxed">
               Tailored recruitment solutions designed to meet the unique demands of 
               global market leaders.
             </p>
@@ -197,7 +197,7 @@ const IndustriesWeServe = () => {
                   {item.title}
                 </h3>
                 
-                <p className="text-zinc-500 group-hover:text-zinc-300 leading-relaxed font-light">
+                <p className="text-zinc-300 group-hover:text-zinc-300 leading-relaxed font-light">
                   {item.desc}
                 </p>
 

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Preloader = ({ logo = "./public/logo.png", alt = "RB HIRES" }) => {
+const Preloader = ({ logo = "./logo.png", alt = "RB HIRES" }) => {
   return (
     <div
       role="status"
