@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ZoomIn, Users, Lightbulb, Target } from 'lucide-react'; // lucide-react install કરી લેજો
+import { ZoomIn, Users, Lightbulb, Target } from 'lucide-react';
 import Footer from '../components/Footer';
 
 const Gallery = () => {
@@ -62,28 +62,29 @@ const Gallery = () => {
     : galleryItems.filter(item => item.category === activeFilter);
 
   return (
-    <div className="min-h-screen bg-[#050505] py-24 px-6 font-sans text-white">
+    <div className="min-h-screen bg-[#050505] py-12 md:py-24 px-4 sm:px-6 font-sans text-white overflow-x-hidden">
       <div className="max-w-7xl mx-auto">
         
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <span className="px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-500 text-[10px] font-bold tracking-[0.2em] uppercase">
+        <div className="text-center mb-10 md:mb-16">
+          <span className="px-3 py-1 md:px-4 md:py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-500 text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase">
             Our Work in Action
           </span>
-          <h2 className="text-4xl md:text-6xl font-bold mt-6 mb-6 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mt-4 md:mt-6 mb-4 md:mb-6 tracking-tight leading-tight">
             Consulting <span className="text-amber-500">Gallery</span>
           </h2>
-          <p className="text-white/50 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
+          <p className="text-white/50 max-w-2xl mx-auto text-sm md:text-lg leading-relaxed px-2">
             Explore moments of collaboration, innovation, and strategic impact from our client engagements.
           </p>
         </div>
 
-        <div className="flex justify-center items-center gap-2 md:gap-3 mb-16 border-b border-white/5 pb-6">
+        {/* Filter Section - Added Horizontal Scroll for Mobile */}
+        <div className="flex justify-start md:justify-center items-center gap-2 md:gap-3 mb-10 md:16 border-b border-white/5 pb-6 overflow-x-auto no-scrollbar touch-pan-x">
           {categories.map(category => (
             <button
               key={category}
               onClick={() => setActiveFilter(category)}
-              className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
+              className={`whitespace-nowrap px-5 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-semibold transition-all duration-300 ${
                 activeFilter === category
                   ? 'bg-amber-500 text-black shadow-lg shadow-amber-500/20'
                   : 'bg-white/5 text-white/70 hover:bg-white/10 hover:text-white'
@@ -94,69 +95,83 @@ const Gallery = () => {
           ))}
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredItems.map((item) => (
+        {/* Grid - Adjusted breakpoints for Tablet and Mobile */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {filteredItems.map((item, index) => (
             <div
               key={item.id}
-              className="group relative bg-white/[0.03] border border-white/10 rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 hover:border-amber-500/30 hover:-translate-y-2 card-animation"
+              style={{ animationDelay: `${index * 100}ms` }}
+              className="group relative bg-white/[0.03] border border-white/10 rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 hover:border-amber-500/30 hover:-translate-y-2 card-animation"
             >
-              {/* Image Container with Zoom Effect */}
-              <div className="relative aspect-[4/3] overflow-hidden">
+              {/* Image Container */}
+              <div className="relative aspect-[4/3] sm:aspect-square lg:aspect-[4/3] overflow-hidden">
                 <img
                   src={item.image}
                   alt={item.title}
+                  loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-xl bg-amber-500/20 flex items-center justify-center border border-amber-500/30">
+                {/* Overlay - Visible on hover (Desktop) and always slightly visible/interactive on Mobile */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-5 md:p-6">
+                  <div className="flex items-center gap-3 mb-2 md:mb-3">
+                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-amber-500/20 flex items-center justify-center border border-amber-500/30">
                       {item.icon}
                     </div>
-                    <h4 className="text-xl font-bold text-white leading-tight">{item.title}</h4>
+                    <h4 className="text-lg md:text-xl font-bold text-white leading-tight">{item.title}</h4>
                   </div>
-                  <p className="text-white/70 text-sm leading-relaxed">{item.description}</p>
+                  <p className="text-white/70 text-xs md:text-sm leading-relaxed line-clamp-2 md:line-clamp-none">
+                    {item.description}
+                  </p>
                   
-                  <ZoomIn className="absolute top-4 right-4 w-5 h-5 text-white/50 opacity-0 group-hover:opacity-100 transition-opacity delay-200" />
+                  <ZoomIn className="absolute top-4 right-4 w-5 h-5 text-white/50 opacity-0 group-hover:opacity-100 transition-opacity delay-200 hidden md:block" />
                 </div>
               </div>
 
-              <div className="p-5 flex justify-between items-center bg-white/[0.01] group-hover:bg-transparent transition-colors">
-                <span className="text-amber-500 text-xs font-bold uppercase tracking-widest bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20 opacity-100 group-hover:opacity-0 transition-opacity duration-300">
+              {/* Card Footer */}
+              <div className="p-4 md:p-5 flex justify-between items-center bg-white/[0.01]">
+                <span className="text-amber-500 text-[10px] md:text-xs font-bold uppercase tracking-widest bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">
                   {item.category}
                 </span>
-                <span className="text-white/30 text-xs font-mono group-hover:opacity-0 transition-opacity">
+                <span className="text-white/30 text-[10px] md:text-xs font-mono">
                   0{item.id}
                 </span>
               </div>
-              
-              <div className="absolute -bottom-16 -right-16 w-32 h-32 bg-amber-500/5 blur-[60px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             </div>
           ))}
         </div>
 
         {/* Footer Note */}
-        <div className="mt-28 text-center py-10 border-t border-white/5">
-          <p className="text-white/30 text-sm">
-            Interested in working with us? <button className="text-amber-500 hover:underline font-medium">Let's discuss your project</button>
+        <div className="mt-20 md:mt-28 text-center py-8 md:py-10 border-t border-white/5">
+          <p className="text-white/30 text-xs md:text-sm px-4">
+            Interested in working with us? <button className="text-amber-500 hover:underline font-medium focus:outline-none">Let's discuss your project</button>
           </p>
         </div>
       </div>
       
       <style jsx>{`
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+          -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none;  /* Firefox */
+        }
+
         @keyframes fadeInScale {
-          from { opacity: 0; transform: scale(0.9); }
-          to { opacity: 1; transform: scale(1); }
+          from { opacity: 0; transform: scale(0.95) translateY(10px); }
+          to { opacity: 1; transform: scale(1) translateY(0); }
         }
         .card-animation {
-          animation: fadeInScale 0.6s ease-out forwards;
+          animation: fadeInScale 0.5s ease-out forwards;
         }
       `}</style>
-         <Footer />
+      <Footer />
     </div>
-   
   );
-
 };
 
 export default Gallery;
