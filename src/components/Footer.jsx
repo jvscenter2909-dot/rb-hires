@@ -1,10 +1,20 @@
 import React from "react";
-import { MapPin, Phone, Mail,ChevronUp } from "lucide-react";
-import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn  } from "react-icons/fa";
+import { MapPin, Phone, Mail, ChevronUp } from "lucide-react";
+import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const routes = {
+    Home: "/",
+    "About Us": "/about",
+    Services: "/service",
+    Jobs: "/job",
+    Gallery: "/gallery",
+    Contact: "/contact",
   };
 
   return (
@@ -38,9 +48,11 @@ const Footer = () => {
           </h3>
 
           <ul className="space-y-3 text-sm text-gray-300">
-            {["Home", "About Us", "Services", "Jobs", "Gallery", "Contact"].map((link) => (
-              <li key={link} className="hover:text-yellow-500 cursor-pointer flex gap-2">
-                <span className="text-yellow-500">›</span> {link}
+            {Object.keys(routes).map((link) => (
+              <li key={link} className="hover:text-yellow-500 flex gap-2">
+                <Link to={routes[link]} className="flex gap-2 items-center">
+                  <span className="text-yellow-500">›</span> {link}
+                </Link>
               </li>
             ))}
           </ul>
@@ -63,7 +75,6 @@ const Footer = () => {
 
         {/* CONTACT */}
         <div className="relative">
-
           <div className="absolute inset-0 bg-yellow-500/5 blur-3xl rounded-full pointer-events-none" />
 
           <h3 className="text-yellow-500 font-bold text-lg mb-5 border-b border-yellow-500/30 pb-2">
@@ -95,22 +106,15 @@ const Footer = () => {
 
           {/* SOCIAL ICONS */}
           <div className="flex gap-3 mt-6">
-
-            {[
-              { Icon: FaFacebookF },
-              { Icon: FaInstagram },
-              { Icon: FaTwitter },
-              { Icon: FaLinkedinIn },
-            ].map((item, idx) => (
+            {[FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn].map((Icon, idx) => (
               <a
                 key={idx}
                 href="#"
                 className="w-9 h-9 bg-yellow-500 text-black flex items-center justify-center rounded-full hover:bg-yellow-400 hover:scale-110 transition"
               >
-                <item.Icon size={16} />
+                <Icon size={16} />
               </a>
             ))}
-
           </div>
         </div>
       </div>

@@ -9,8 +9,8 @@ import Refer from "./pages/Refern";
 import Contact from "./pages/Contact";
 import Job from "./pages/ApplyJob";
 import PreLoader from "./components/PreLoader"; 
-import Gallery from "./pages/Gallery"
-
+import Gallery from "./pages/Gallery";
+import ScrollToTop from "./components/scrollToTop"; 
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -18,19 +18,21 @@ const App = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1000); // 2 sec preloader
+    }, 1000); 
 
     return () => clearTimeout(timer);
   }, []);
 
-  // 👇 IMPORTANT: Pehla preloader check
   if (loading) {
     return <PreLoader />;
   }
+
   return (
     <Router>
+      {/* 👇 અહીં ScrollToTop મૂકવાથી દરેક પેજ ઉપરથી જ લોડ થશે */}
+      <ScrollToTop /> 
+      
       <Routes>
-
         {/* Layout Wrapper */}
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
@@ -42,7 +44,6 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/job" element={<Job />} />
         </Route>
-
       </Routes>
     </Router>
   );
