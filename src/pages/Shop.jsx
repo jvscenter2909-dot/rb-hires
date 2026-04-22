@@ -6,7 +6,7 @@ const Shop = () => {
   const plans = [
     {
       name: "Starter",
-      price: "$1000",
+      price: "$1500",
       description: "Perfect for freshers looking for guidance.",
       features: [
         "Resume Optimization",
@@ -20,7 +20,7 @@ const Shop = () => {
     },
     {
       name: "Professional",
-      price: "$2000",
+      price: "$2500",
       description: "Comprehensive support for serious job seekers.",
       features: [
         "All Starter Features",
@@ -35,7 +35,7 @@ const Shop = () => {
     },
     {
       name: "Executive",
-      price: "$3500",
+      price: "$5000",
       description: "Advanced leadership and tech coaching.",
       features: [
         "Premium 1:1 Mentorship",
