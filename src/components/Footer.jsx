@@ -1,138 +1,103 @@
 import React from "react";
-import { MapPin, Phone, Mail, ChevronUp } from "lucide-react";
-import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  const routes = {
-    Home: "/",
-    "About Us": "/about",
-    Services: "/service",
-    Jobs: "/job",
-    Gallery: "/gallery",
-    Contact: "/contact",
-  };
-
   return (
-    <footer className="bg-black text-white pt-20 pb-10 px-6 md:px-20 relative overflow-hidden">
-
-      {/* Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-yellow-500/10 blur-[150px] rounded-full pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-14 relative z-10">
-
-        {/* LOGO */}
-        <div className="space-y-6">
-          <div className="bg-white p-2 inline-block rounded-md">
-            <img
-              src="/logo.png"
-              alt="RB Hires Logo"
-              className="h-12 w-auto object-contain"
+    <footer className="bg-[#f8f9fa] pt-0">
+      {/* 1. TOP BANNER SECTION */}
+      <div className="bg-[#e9f2ff] py-12 px-6 md:px-20">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+          <div className="space-y-4 max-w-2xl text-center md:text-left">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#003366] leading-tight">
+              Join India’s <span className="text-[#76b543]">Largest Advisor Network</span>
+            </h2>
+            <button className="bg-[#003366] text-white px-8 py-3 rounded-md font-semibold hover:bg-opacity-90 transition shadow-lg">
+              Request a Callback
+            </button>
+          </div>
+          {/* Banner Illustration Placeholder */}
+          <div className="hidden md:block">
+            <img 
+              src="/assets/footer.png" // Replace with your image path
+              alt="Advisor illustration" 
+              className="w-64 h-auto" 
             />
-          </div>
-
-          <p className="text-gray-300 text-sm leading-relaxed">
-            RB Hires is a professional recruitment and consulting firm helping
-            organizations hire the right talent and build successful teams.
-          </p>
-        </div>
-
-        {/* QUICK LINKS */}
-        <div>
-          <h3 className="text-yellow-500 font-bold text-lg mb-5 border-b border-yellow-500/30 pb-2">
-            Quick Links
-          </h3>
-
-          <ul className="space-y-3 text-sm text-gray-300">
-            {Object.keys(routes).map((link) => (
-              <li key={link} className="hover:text-yellow-500 flex gap-2">
-                <Link to={routes[link]} className="flex gap-2 items-center">
-                  <span className="text-yellow-500">›</span> {link}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* JOB ROLES */}
-        <div>
-          <h3 className="text-yellow-500 font-bold text-lg mb-5 border-b border-yellow-500/30 pb-2">
-            Job Roles
-          </h3>
-
-          <ul className="space-y-3 text-sm text-gray-300">
-            {["IT & Software", "Sales & Marketing", "HR", "Finance", "Operations"].map((role) => (
-              <li key={role} className="hover:text-yellow-500 cursor-pointer flex gap-2">
-                <span className="text-yellow-500">›</span> {role}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* CONTACT */}
-        <div className="relative">
-          <div className="absolute inset-0 bg-yellow-500/5 blur-3xl rounded-full pointer-events-none" />
-
-          <h3 className="text-yellow-500 font-bold text-lg mb-5 border-b border-yellow-500/30 pb-2">
-            Contact Us
-          </h3>
-
-          <div className="space-y-4 text-sm text-gray-300">
-
-            <div className="flex gap-3">
-              <MapPin className="text-yellow-500" size={18} />
-              <p>Mehsana, India</p>
-            </div>
-
-            <div className="flex gap-3">
-              <MapPin className="text-yellow-500" size={18} />
-              <p>Dover DE, USA</p>
-            </div>
-
-            <div className="flex gap-3">
-              <Phone className="text-yellow-500" size={18} />
-              <p>+1 9094020265</p>
-            </div>
-
-            <div className="flex gap-3">
-              <Mail className="text-yellow-500" size={18} />
-              <p>info@rbhiresconsultinc.com</p>
-            </div>
-          </div>
-
-          {/* SOCIAL ICONS */}
-          <div className="flex gap-3 mt-6">
-            {[FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn].map((Icon, idx) => (
-              <a
-                key={idx}
-                href="#"
-                className="w-9 h-9 bg-yellow-500 text-black flex items-center justify-center rounded-full hover:bg-yellow-400 hover:scale-110 transition"
-              >
-                <Icon size={16} />
-              </a>
-            ))}
           </div>
         </div>
       </div>
 
-      {/* BOTTOM BAR */}
-      <div className="max-w-7xl mx-auto mt-16 pt-6 border-t border-zinc-800 flex flex-col md:flex-row justify-between items-center gap-4 relative z-10">
+      {/* 2. MAIN FOOTER LINKS SECTION */}
+      <div className="max-w-7xl mx-auto py-16 px-6 md:px-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        
+        {/* LOGO & ABOUT */}
+        <div className="bg-white p-6 rounded-xl shadow-sm border-l-8 border-[#76b543]">
+          <img  src="/assets/logo.png" alt="Navlakha Logo" className="h-16 mb-6" />
+          <p className="text-[#003366] text-[15px] leading-relaxed font-medium mb-6">
+            At NAVLAKHA INSURANCE SERVICES, we believe in safeguarding what matters most to you — your health, your life, and your valuable assets.
+          </p>
+          <div>
+            <h4 className="font-bold text-[#003366] mb-4">Follow up</h4>
+            <div className="flex gap-4">
+              <FaFacebookF className="cursor-pointer hover:text-[#76b543]" />
+              <FaTwitter className="cursor-pointer hover:text-[#76b543]" />
+              <FaInstagram className="cursor-pointer hover:text-[#76b543]" />
+              <FaYoutube className="cursor-pointer hover:text-[#76b543]" />
+            </div>
+          </div>
+        </div>
 
-        <p className="text-gray-500 text-xs">
-          © 2026 RB Hires. All Rights Reserved.
-        </p>
+        {/* EXPLORE */}
+        <div>
+          <h3 className="text-[#003366] font-bold text-xl mb-6">Explore</h3>
+          <ul className="space-y-4 text-gray-700">
+            {["About Us", "Photo Gallery", "Blog", "Contact", "Terms & Conditions"].map((item) => (
+              <li key={item} className="border-b border-gray-300 pb-2 hover:text-[#76b543] transition">
+                <Link to="#">{item}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-        <button
-          onClick={scrollToTop}
-          className="bg-yellow-500 p-3 rounded-lg text-black hover:bg-yellow-400 transition shadow-lg shadow-yellow-500/20"
-        >
-          <ChevronUp size={22} />
-        </button>
+        {/* PRODUCTS */}
+        <div>
+          <h3 className="text-[#003366] font-bold text-xl mb-6">Products</h3>
+          <ul className="space-y-4 text-gray-700">
+            {["Health Insurance", "Motor Insurance", "Liability Insurance", "Travel Insurance", "Property Insurance", "Fire Insurance"].map((item) => (
+              <li key={item} className="border-b border-gray-300 pb-2 hover:text-[#76b543] transition">
+                <Link to="#">{item}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
 
+        {/* CONTACT INFO */}
+        <div>
+          <h3 className="text-[#003366] font-bold text-xl mb-6">Contact Info</h3>
+          <div className="space-y-6 text-[#003366]">
+            <div>
+              <p className="font-bold">Head office :-</p>
+              <p className="text-sm leading-relaxed mt-1">
+                A-604, 6th Floor, Block-A, Bijal Business Center, Nr. Pooja Avenue, Opp. Shyam Icon, Aslali Circle Ring Road, Aslali, Ahmedabad-382427
+              </p>
+            </div>
+            
+            <div className="space-y-2 text-sm border-t border-gray-300 pt-4">
+              <p><span className="font-bold">Email :-</span> minaxi@navlakhainsurance.in</p>
+              <p><span className="font-bold">Email :-</span> info@navlakhainsurance.in</p>
+            </div>
+
+            <div className="space-y-2 text-sm border-t border-gray-300 pt-4 font-medium">
+              <p className="font-bold">Minaxi Navlakha Phone No.:-</p>
+              <p>+91 8320291588, +91 6355977758</p>
+            </div>
+
+            <div className="space-y-2 text-sm border-t border-gray-300 pt-4">
+              <p className="font-bold">Paresh Navlakha Phone No :-</p>
+              <p>+91 9316309866</p>
+            </div>
+          </div> 
+        </div>
       </div>
     </footer>
   );
