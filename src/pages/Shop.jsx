@@ -298,7 +298,7 @@ const Shop = () => {
   const products = [
     {
       id: 1,
-      name: "Starter",
+      name: "Essential_Placement_Program",
       brand: "Career Kickstart",
       price: "1,500.00",
       oldPrice: "2,200.00",
@@ -312,7 +312,7 @@ const Shop = () => {
     },
     {
       id: 2,
-      name: "Professional",
+      name: "Strategic_Placement_Program",
       brand: "Career Accelerator",
       price: "2,500.00",
       oldPrice: "3,800.00",
@@ -328,7 +328,7 @@ const Shop = () => {
     },
     {
       id: 3,
-      name: "Executive",
+      name: "Platinum_Placement_Program",
       brand: "Elite Placement",
       price: "5,000.00",
       oldPrice: "7,500.00",
@@ -403,9 +403,9 @@ const Shop = () => {
                     
                   <button
   onClick={() => {
-    if (product.name === "Starter") navigate("/starter");
-    if (product.name === "Professional") navigate("/professional");
-    if (product.name === "Executive") navigate("/executive");
+    if (product.name === "Essential_Placement_Program") navigate("/starter");
+    if (product.name === "Strategic_Placement_Program") navigate("/professional");
+    if (product.name === "Platinum_Placement_Program") navigate("/executive");
   }}
   className="w-full py-4 bg-white text-black font-black text-[10px] uppercase tracking-[0.4em] rounded-2xl flex items-center justify-center gap-3 hover:bg-amber-500 transition-all duration-500"
 >
