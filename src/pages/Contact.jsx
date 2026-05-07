@@ -1,8 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Send, MessageSquareText } from 'lucide-react';
 import Footer from '../components/Footer';
 
 const ContactPage = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    if (!formData.name || !formData.email || !formData.message) {
+      alert('Please fill all fields');
+      return;
+    }
+
+    const whatsappNumber = '17302786080';
+    const message = `Hello! I'd like to get in touch.\n\n📝 Name: ${formData.name}\n📧 Email: ${formData.email}\n💬 Message: ${formData.message}`;
+    const encodedMessage = encodeURIComponent(message);
+
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+  };
+
   const contactDetails = [
     { icon: Phone, title: "Call Us", detail: "+1 9094020265", type: 'tel' },
     { icon: Mail, title: "Email Us", detail: "info@rbhiresconsultinc.com", type: 'email' },
@@ -68,18 +97,39 @@ const ContactPage = () => {
             ))}
           </div>
 
-          {/* RIGHT SIDE FORM (UNCHANGED) */}
+          {/* RIGHT SIDE FORM */}
           <div className="lg:col-span-3 bg-white/[0.03] border border-white/10 p-6 md:p-12 rounded-3xl">
             <h2 className="text-2xl md:text-4xl font-extrabold mb-8">
               Send Us A Message
             </h2>
 
-            <form className="space-y-6">
-              <input className="w-full bg-black/20 border border-white/10 p-4 rounded-xl" placeholder="Your Name" />
-              <input className="w-full bg-black/20 border border-white/10 p-4 rounded-xl" placeholder="Email" />
-              <textarea className="w-full bg-black/20 border border-white/10 p-4 rounded-xl" rows="4" placeholder="Message" />
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <input 
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+                className="w-full bg-black/20 border border-white/10 p-4 rounded-xl focus:border-amber-500/50 outline-none transition" 
+                placeholder="Your Name" 
+              />
+              <input 
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                className="w-full bg-black/20 border border-white/10 p-4 rounded-xl focus:border-amber-500/50 outline-none transition" 
+                placeholder="Email" 
+              />
+              <textarea 
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
+                className="w-full bg-black/20 border border-white/10 p-4 rounded-xl focus:border-amber-500/50 outline-none transition" 
+                rows="4" 
+                placeholder="Message" 
+              />
 
-              <button className="bg-amber-500 text-black font-bold px-8 py-4 rounded-full">
+              <button type="submit" className="bg-amber-500 text-black font-bold px-8 py-4 rounded-full hover:bg-amber-400 transition-all">
                 Send Message
               </button>
             </form>
