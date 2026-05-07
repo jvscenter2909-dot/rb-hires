@@ -65,9 +65,17 @@ const Footer = () => {
           </h3>
 
           <ul className="space-y-3 text-sm text-gray-300">
-            {["IT & Software", "Sales & Marketing", "HR", "Finance", "Operations"].map((role) => (
-              <li key={role} className="hover:text-yellow-500 cursor-pointer flex gap-2">
-                <span className="text-yellow-500">›</span> {role}
+            {[
+              { name: "IT & Software", path: "/it-software" },
+              { name: "Sales & Marketing", path: "/sales-marketing" },
+              { name: "HR", path: "/hr-jobs" },
+              { name: "Finance", path: "/finance" },
+              { name: "Operations", path: "/operations" },
+            ].map((role) => (
+              <li key={role.name} className="hover:text-yellow-500 flex gap-2">
+                <Link to={role.path} className="flex gap-2 items-center">
+                  <span className="text-yellow-500">›</span> {role.name}
+                </Link>
               </li>
             ))}
           </ul>

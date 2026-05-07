@@ -14,6 +14,11 @@ import ScrollToTop from "./components/scrollToTop";
 import Starter from "./pages/Starter";
 import Professional from "./pages/Professional";
 import Executive from "./pages/Executive";
+import ITSoftware from "./pages/ITSoftware";
+import SalesMarketing from "./pages/SalesMarketing";
+import HRJobs from "./pages/HRJobs";
+import Finance from "./pages/Finance";
+import Operations from "./pages/Operations";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -43,12 +48,17 @@ const App = () => {
           <Route path="/service" element={<Service />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/starter" element={<Starter />} />
-<Route path="/professional" element={<Professional />} />
-<Route path="/executive" element={<Executive />} />
+          <Route path="/professional" element={<Professional />} />
+          <Route path="/executive" element={<Executive />} />
           <Route path="/gallery" element={<Gallery/>}/>
           <Route path="/refer" element={<Refer />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/job" element={<Job />} />
+          <Route path="/it-software" element={<ITSoftware />} />
+          <Route path="/sales-marketing" element={<SalesMarketing />} />
+          <Route path="/hr-jobs" element={<HRJobs />} />
+          <Route path="/finance" element={<Finance />} />
+          <Route path="/operations" element={<Operations />} />
         </Route>
       </Routes>
     </Router>
