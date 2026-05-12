@@ -8,7 +8,11 @@ import {
   Users, 
   PhoneCall, 
   Globe,
-  ArrowLeft 
+  ArrowLeft,
+  Award,
+  Briefcase,
+  DollarSign,
+  FolderOpen
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
@@ -92,41 +96,49 @@ const Professional = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-y-8 md:gap-x-12 mb-10 md:mb-12">
               <div className="space-y-2">
                 <div className="flex items-center gap-3 text-white">
+                  <Award className="w-4 h-4 text-amber-500" />
+                  <span className="text-[11px] font-black uppercase tracking-widest">Placement Guarantee</span>
+                </div>
+                <p className="text-[11px] text-gray-500 font-bold uppercase leading-relaxed">12–22 interview opportunities or continued support at zero cost.</p>
+              </div>
+
+              <div className="space-y-2">
+                <div className="flex items-center gap-3 text-white">
                   <Users className="w-4 h-4 text-amber-500" />
-                  <span className="text-[11px] font-black uppercase tracking-widest">1-on-1 Prep</span>
+                  <span className="text-[11px] font-black uppercase tracking-widest">Premium Mentorship</span>
                 </div>
-                <p className="text-[11px] text-gray-500 font-bold uppercase leading-relaxed">Technical & HR mock sessions with feedback.</p>
+                <p className="text-[11px] text-gray-500 font-bold uppercase leading-relaxed">1-on-1 guidance from industry experts and C-suite professionals.</p>
               </div>
 
               <div className="space-y-2">
                 <div className="flex items-center gap-3 text-white">
-                  <PhoneCall className="w-4 h-4 text-amber-500" />
-                  <span className="text-[11px] font-black uppercase tracking-widest">Recruiter Reach</span>
+                  <DollarSign className="w-4 h-4 text-amber-500" />
+                  <span className="text-[11px] font-black uppercase tracking-widest">Salary Negotiation</span>
                 </div>
-                <p className="text-[11px] text-gray-500 font-bold uppercase leading-relaxed">Direct outreach to active hiring managers.</p>
+                <p className="text-[11px] text-gray-500 font-bold uppercase leading-relaxed">Expert strategies to maximize compensation packages.</p>
               </div>
 
               <div className="space-y-2">
                 <div className="flex items-center gap-3 text-white">
-                  <Zap className="w-4 h-4 text-amber-500" />
-                  <span className="text-[11px] font-black uppercase tracking-widest">ATS Mastery</span>
+                  <Briefcase className="w-4 h-4 text-amber-500" />
+                  <span className="text-[11px] font-black uppercase tracking-widest">Executive Branding</span>
                 </div>
-                <p className="text-[11px] text-gray-500 font-bold uppercase leading-relaxed">Advanced LinkedIn & Resume optimization.</p>
+                <p className="text-[11px] text-gray-500 font-bold uppercase leading-relaxed">Build your thought leadership and professional presence.</p>
               </div>
 
               <div className="space-y-2">
                 <div className="flex items-center gap-3 text-white">
-                  <Globe className="w-4 h-4 text-amber-500" />
-                  <span className="text-[11px] font-black uppercase tracking-widest">Reporting</span>
+                  <FolderOpen className="w-4 h-4 text-amber-500" />
+                  <span className="text-[11px] font-black uppercase tracking-widest">Portfolio Development</span>
                 </div>
-                <p className="text-[11px] text-gray-500 font-bold uppercase leading-relaxed">Full interview tracking and funnel analysis.</p>
+                <p className="text-[11px] text-gray-500 font-bold uppercase leading-relaxed">Curated project portfolio to showcase your expertise.</p>
               </div>
             </div>
 
             {/* PRICE */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-8 pt-6 md:pt-8 border-t border-white/5">
               <div className="flex flex-col">
-                <span className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tighter">$2,500.00</span>
+                <span className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tighter">$5,000.00</span>
                 <span className="text-[10px] text-amber-500 font-black uppercase tracking-widest">Professional Tier</span>
               </div>
 

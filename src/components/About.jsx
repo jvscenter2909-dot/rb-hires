@@ -376,16 +376,17 @@ const About = ({ showExtra = false }) => {
               ))}
             </div>
 
-              
-               <Link
-              to="/about"
-              className="group relative flex items-center gap-3 bg-white text-black font-bold px-8 py-4 rounded-2xl hover:bg-amber-500 transition-all duration-300 active:scale-95 shadow-xl shadow-white/5"
-            >
-              Learn More About Us
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
+            {!showExtra && (
+              <Link
+                to="/about"
+                className="group relative flex items-center gap-3 bg-white text-black font-bold px-8 py-4 rounded-2xl hover:bg-amber-500 transition-all duration-300 active:scale-95 shadow-xl shadow-white/5"
+              >
+                Learn More About Us
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            )}
             
           </div>
         </div>
@@ -415,24 +416,129 @@ const About = ({ showExtra = false }) => {
             </div>
             <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 mb-24">
               {[
-                { name: "Bhargav Solanki", role: "Founder", img: "/bhargav.png" },
-                { name: "Jimit Parmar", role: "Co-Founder", img: "/jimit.png" },
-                { name: "Rahul Parmar", role: "CEO", img: "/rahul.png" },
-                { name: "Parth Solanki", role: "HR Manager", img: "/parth.png" },
+                { 
+                  name: "Bhargav Solanki", 
+                  role: "Founder", 
+                  img: "/bhargav.png",
+                  quote: "Great talent deserves great opportunities"
+                },
+                { 
+                  name: "Jimit Parmar", 
+                  role: "Co-Founder", 
+                  img: "/jimit.png",
+                  quote: "Building careers, transforming futures"
+                },
+                { 
+                  name: "Rahul Parmar", 
+                  role: "CEO", 
+                  img: "/rahul.png",
+                  quote: "Excellence is not a destination, it's a journey"
+                },
+                { 
+                  name: "Parth Solanki", 
+                  role: "HR Manager", 
+                  img: "/parth.png",
+                  quote: "People are our greatest asset"
+                },
               ].map((member, index) => (
-                <div key={index} className="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
-                  <img src={member.img} alt={member.name} className="w-full h-70 object-cover" />
-                  <div className="p-4 text-center">
-                    <h3 className="text-base font-semibold">{member.name}</h3>
-                    <p className="text-amber-500 text-xs">{member.role}</p>
+                <div 
+                  key={index} 
+                  className="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-amber-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(245,158,11,0.2)]"
+                  style={{
+                    animation: `slideUp 0.6s ease-out ${index * 0.1}s both`
+                  }}
+                >
+                  <div className="relative overflow-hidden h-70">
+                    <img 
+                      src={member.img} 
+                      alt={member.name} 
+                      className="w-full h-70 object-cover group-hover:scale-110 transition-transform duration-700 brightness-75 group-hover:brightness-100" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
+                  
+                  <div className="p-4 text-center space-y-3 relative">
+                    <div className="transform group-hover:scale-105 transition-transform duration-300">
+                      <h3 className="text-base font-semibold group-hover:text-amber-500 transition-colors duration-300">{member.name}</h3>
+                      <p className="text-amber-500 text-xs font-bold tracking-widest">{member.role}</p>
+                    </div>
+                    
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform group-hover:translate-y-0 translate-y-2">
+                      <p className="text-white/80 text-[11px] italic leading-relaxed border-t border-white/10 pt-3 font-medium">
+                        "{member.quote}"
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="absolute inset-0 bg-gradient-to-r from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                 </div>
               ))}
             </div>
 
             {/* TESTIMONIALS */}
-            <div className="grid md:grid-cols-3 gap-8 mb-20">
-               {/* ... (તમારો ટેસ્ટિમોનિયલ કોડ અહીં મૂકો) ... */}
+            <div className="mt-24 md:mt-32">
+              <div className="text-center mb-16">
+                <p className="text-amber-500 uppercase tracking-[0.4em] text-[10px] font-bold mb-4 bg-amber-500/10 inline-block px-4 py-1 rounded-full border border-amber-500/20">
+                  Testimonials
+                </p>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 font-display text-white">
+                  What Our <span className="text-amber-500">Clients</span> Say
+                </h2>
+                <p className="text-white/50 max-w-2xl mx-auto text-sm md:text-lg leading-relaxed font-light">
+                  Organizations and professionals who trust RB Hires Consulting for exceptional results.
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+                {[
+                  {
+                    text: "RB Hires Consulting delivered exceptional recruitment solutions. Their professionalism and dedication transformed our hiring process.",
+                    name: "Anita Verma",
+                    role: "HR Director, Tech Corp",
+                  },
+                  {
+                    text: "Outstanding placement guarantee and genuine support. Their team understood our culture and delivered perfect fits.",
+                    name: "Amit Patel",
+                    role: "Founder, StartUp India",
+                  },
+                  {
+                    text: "Trustworthy, efficient, and results-driven. RB Hires Consulting is the recruitment partner every growing company needs.",
+                    name: "Sneha Kulkarni",
+                    role: "Operations Head, Global Inc",
+                  },
+                ].map((item, index) => (
+                  <div
+                    key={index}
+                    className="group relative bg-gradient-to-br from-white/[0.08] to-transparent border border-white/10 rounded-3xl p-8 transition-all duration-500 hover:border-amber-500/50 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(245,158,11,0.15)]"
+                  >
+                    <div className="absolute -top-4 -left-2 bg-amber-500 text-black w-10 h-10 flex items-center justify-center rounded-xl rotate-[-10deg] shadow-lg group-hover:rotate-0 transition-transform duration-300">
+                      <span className="text-2xl font-serif">"</span>
+                    </div>
+
+                    <div className="relative z-10">
+                      <p className="text-white/80 text-base md:text-lg leading-relaxed mb-10 italic font-light">
+                        {item.text}
+                      </p>
+
+                      <div className="flex items-center gap-4 border-t border-white/5 pt-6">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-amber-500 to-orange-400 flex items-center justify-center text-black font-bold text-sm shadow-inner">
+                          {item.name.charAt(0)}
+                        </div>
+                        <div className="flex flex-col">
+                          <span className="text-white font-semibold text-base group-hover:text-amber-500 transition-colors">
+                            {item.name}
+                          </span>
+                          <span className="text-white/70 text-[11px] uppercase tracking-widest font-medium">
+                            {item.role}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="absolute inset-0 bg-amber-500/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl blur-2xl"></div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         )}
@@ -446,6 +552,28 @@ const About = ({ showExtra = false }) => {
 
       <style jsx>{`
         .font-display { font-family: 'Space Grotesk', sans-serif; }
+
+        @keyframes slideUp {
+          from {
+            opacity: 0;
+            transform: translateY(40px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes fadeInScale {
+          from {
+            opacity: 0;
+            transform: scale(0.95);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
       `}</style>
     </div>
   );

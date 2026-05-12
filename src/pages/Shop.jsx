@@ -366,7 +366,7 @@ const Shop = () => {
             <div className="inline-flex items-center gap-3 px-4 py-2 border border-white/10 rounded-full bg-white/5 mb-8">
               <div className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
               <span className="text-white text-[10px] font-bold uppercase tracking-[0.4em]">
-                Technexa Store
+                RB HIRES Store
               </span>
             </div>
 
