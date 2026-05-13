@@ -420,25 +420,25 @@ const About = ({ showExtra = false }) => {
                   name: "Bhargav Solanki", 
                   role: "Founder", 
                   img: "/bhargav.png",
-                  quote: "Great talent deserves great opportunities"
+                  quote: "At RB Hires Consulting, success is not about filling positions — it’s about transforming careers and changing lives."
                 },
                 { 
                   name: "Jimit Parmar", 
                   role: "Co-Founder", 
                   img: "/jimit.png",
-                  quote: "Building careers, transforming futures"
+                  quote: "Behind every successful placement is a system driven by commitment, discipline, and purpose."
                 },
                 { 
                   name: "Rahul Parmar", 
                   role: "CEO", 
                   img: "/rahul.png",
-                  quote: "Excellence is not a destination, it's a journey"
+                  quote: "A CEO’s job is not to manage people; it is to inspire momentum, direction, and belief."
                 },
                 { 
                   name: "Parth Solanki", 
                   role: "HR Manager", 
                   img: "/parth.png",
-                  quote: "People are our greatest asset"
+                  quote: "Every interview is an opportunity to change someone’s career forever."
                 },
               ].map((member, index) => (
                 <div 
