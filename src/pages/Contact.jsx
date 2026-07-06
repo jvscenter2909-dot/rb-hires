@@ -25,7 +25,7 @@ const ContactPage = () => {
       return;
     }
 
-    const whatsappNumber = '17302786080';
+    const whatsappNumber = '15129852585';
     const message = `Hello! I'd like to get in touch.\n\n📝 Name: ${formData.name}\n📧 Email: ${formData.email}\n💬 Message: ${formData.message}`;
     const encodedMessage = encodeURIComponent(message);
 
