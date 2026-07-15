@@ -39,6 +39,15 @@ const Footer = () => {
             RB Hires is a professional recruitment and consulting firm helping
             organizations hire the right talent and build successful teams.
           </p>
+          <a
+            href="https://www.e-verify.gov/e-verify-employer-search"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="inline-flex items-center gap-2"
+            aria-label="E-Verify Employer Search"
+          >
+            <img src="../E-Verify_Logo-2x.png" alt="E-Verify Employer Search" className="h-8 w-auto" />
+          </a>
         </div>
 
         {/* QUICK LINKS */}
@@ -146,9 +155,13 @@ const Footer = () => {
       {/* BOTTOM BAR */}
       <div className="max-w-7xl mx-auto mt-16 pt-6 border-t border-zinc-800 flex flex-col md:flex-row justify-between items-center gap-4 relative z-10">
 
-        <p className="text-gray-500 text-xs">
-          © 2026 RB Hires. All Rights Reserved.
-        </p>
+        <div className="flex items-center gap-4">
+          <p className="text-gray-500 text-xs">
+            © 2026 RB Hires. All Rights Reserved.
+          </p>
+
+          
+        </div>
 
         <button
           onClick={scrollToTop}
