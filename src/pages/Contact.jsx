@@ -33,7 +33,7 @@ const ContactPage = () => {
   };
 
   const contactDetails = [
-    { icon: Phone, title: "Call Us", detail: "+1 9094020265", type: 'tel' },
+    { icon: Phone, title: "Call Us", detail: "+1 5129852585", type: 'tel' },
     { icon: Mail, title: "Email Us", detail: "info@rbhiresconsultinc.com", type: 'email' },
     { icon: MapPin, title: "India Office", detail: "T-22, Golden Square, Mehasana, GJ", type: 'text' },
     { icon: MapPin, title: "USA Office", detail: "8 The Green, STE A, Dover DE, 19901", type: 'text' },
