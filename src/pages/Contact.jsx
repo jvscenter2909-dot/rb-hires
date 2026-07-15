@@ -35,14 +35,14 @@ const ContactPage = () => {
   const contactDetails = [
     { icon: Phone, title: "Call Us", detail: "+1 5129852585", type: 'tel' },
     { icon: Mail, title: "Email Us", detail: "info@rbhiresconsultinc.com", type: 'email' },
-    { icon: MapPin, title: "India Office", detail: "T-22, Golden Square, Mehasana, GJ", type: 'text' },
+    { icon: MapPin, title: "India Office", detail: "Office No: F/1,2,3 Metricon Complex,Opposite Domino's Pizza, Bansari Township,Panchot, Mehsana, Gujarat – 384005.", type: 'text' },
     { icon: MapPin, title: "USA Office", detail: "8 The Green, STE A, Dover DE, 19901", type: 'text' },
   ];
 
   const locationDetails = [
     { 
       title: "India Location", 
-      detail: "T-22, Golden Square, Radhanpur Road, Mehasana, India, 384002.", 
+      detail: "Office No: F/1,2,3 Metricon Complex,Opposite Domino's Pizza, Bansari Township,Panchot, Mehsana, Gujarat – 384005.", 
       mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.4026369062!2d72.3789!3d23.6061!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDM2JzIyLjAiTiA3MsKwMjInNDQuMCJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
     },
     { 
